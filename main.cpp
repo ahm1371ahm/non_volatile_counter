@@ -4,8 +4,9 @@
 
 int main(int arc, char *argv[])
 {
-    NVCounter nvCounter;
+    NVCounter nvCounter("counter2.txt");
     ++nvCounter;
+    nvCounter -= 34;
     std::cout << nvCounter.getValue() << std::endl;
     return 0;
 }
