@@ -2,16 +2,17 @@
 
 #include <cstdint>
 #include <string>
+#include <fstream>
 
-#define DEFAUL_NV_COUNTER_FILE_PATH "./"
+#define DEFAULT_NV_COUNTER_FILE_NAME "./counter.txt"
 
 class NVCounter
 {
 public:
     explicit NVCounter();
     explicit NVCounter(const int64_t initValue);
-    explicit NVCounter(const std::string &filePath);
-    explicit NVCounter(const std::string &filePath, const int64_t initValue);
+    explicit NVCounter(const std::string &fileName);
+    explicit NVCounter(const std::string &fileName, const int64_t initValue);
 
     int64_t operator++();
     int64_t operator++(int);
@@ -25,9 +26,11 @@ public:
     int64_t getValue() const { return this->m_value; }
     int64_t &getValue() { return this->m_value; }
 
-    const std::string &getFilePath() const { return this->m_filePath; }
+    const std::string &getFilePath() const { return this->m_fileName; }
 
 private:
     int64_t m_value;
-    std::string m_filePath;
+    std::string m_fileName;
+    void _writeToFile() const;
+    void _readFromFile(); 
 };
