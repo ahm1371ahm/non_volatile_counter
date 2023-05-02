@@ -8,5 +8,6 @@ int main(int arc, char *argv[])
     ++nvCounter;
     nvCounter -= 34;
     std::cout << nvCounter.getValue() << std::endl;
+    std::cout << *nvCounter << std::endl;
     return 0;
 }

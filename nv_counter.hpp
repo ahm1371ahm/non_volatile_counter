@@ -17,6 +17,7 @@ public:
     void setValue(const int64_t value) { this->m_value = value; }
     int64_t getValue() const { return this->m_value; }
     int64_t &getValue() { return this->m_value; }
+    int64_t operator*() const {return this->m_value;}
     void reset();
 
     int64_t operator++();
