@@ -5,6 +5,7 @@
 #include <fstream>
 #include <filesystem>
 #include <iostream>
+#include <ostream>
 
 #define DEFAULT_NV_COUNTER_FILE_NAME "./counter.txt"
 
@@ -30,6 +31,7 @@ public:
     int16_t operator-=(const int64_t arg);
 
     const std::string &getFilePath() const { return this->m_fileName; }
+    friend std::ostream &operator<<(std::ostream &out, const NVCounter &arg);
 private:
     int64_t m_value;
     std::string m_fileName;
@@ -37,3 +39,5 @@ private:
     void _readFromFile(); 
     bool _fileExists() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const NVCounter &arg);

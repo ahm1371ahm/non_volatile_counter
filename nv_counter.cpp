@@ -79,3 +79,9 @@ bool NVCounter::_fileExists() const
 {
     return std::filesystem::exists(this->m_fileName);
 }
+
+std::ostream &operator<<(std::ostream &out, const NVCounter &arg)
+{
+    out << arg.m_value;
+    return out;
+}

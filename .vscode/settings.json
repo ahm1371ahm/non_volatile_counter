@@ -55,5 +55,5 @@
     "iomanip": "cpp",
     "numbers": "cpp"
   },
-"C_Cpp.intelliSenseEngineFallback": "enabled"
+"C_Cpp.intelliSenseEngineFallback": "disabled"
 }
