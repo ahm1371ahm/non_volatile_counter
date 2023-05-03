@@ -3,3 +3,5 @@ a.exe
 counter.txt
 counter2.txt
 build/
+CMakeFiles
+CMakeCache.txt

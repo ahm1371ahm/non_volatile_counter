@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Basics
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR)
+  message(FATAL_ERROR "Prevented in-tree build. Please create a build directory outside of the non_volatile_counter source code and run \"cmake -S ${CMAKE_SOURCE_DIR} -B .\" from there")
+endif()
+
 # Version and Project
 set (RELEASE_SERVICE_VERSION_MAJOR "01")
 set (RELEASE_SERVICE_VERSION_MINOR "00")
