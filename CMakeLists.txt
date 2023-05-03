@@ -22,6 +22,8 @@ set (CMAKE_COLOR_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "-O2")
+# set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+# set(CAMKE_C_COMPILER "/usr/bin/clang")
 
 include_directories(./include)
 add_executable(nvc ./test/main.cpp ./src/nv_counter.cpp)
